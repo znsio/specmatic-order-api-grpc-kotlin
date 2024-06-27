@@ -1,0 +1,9 @@
+{
+  "fullMethodName": "order_package.OrderService/DeleteOrder",
+  "request": {
+    "id": 20
+  },
+  "response": {
+    "message" : ""
+  }
+}

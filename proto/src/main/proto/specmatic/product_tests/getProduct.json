@@ -1,0 +1,12 @@
+{
+  "fullMethodName": "product_package.ProductService/GetProduct",
+  "request": {
+    "id": 20
+  },
+  "response": {
+    "id" : 1,
+    "name" : "iPhone",
+    "type" : "GADGET",
+    "inventory" : 4
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "fullMethodName": "product_package.ProductService/UpdateProduct",
+  "request": {
+    "id": 20,
+    "name": "Gemini",
+    "type": "BOOK",
+    "inventory": 2
+  },
+  "response": {
+    "message": ""
+  }
+}

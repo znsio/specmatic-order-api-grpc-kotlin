@@ -1,0 +1,9 @@
+{
+  "fullMethodName": "product_package.ProductService/SearchProducts",
+  "request": {
+    "type": "BOOK"
+  },
+  "response": {
+    "products": []
+  }
+}
