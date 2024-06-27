@@ -1,0 +1,11 @@
+{
+  "sources": [
+    {
+      "provider": "filesystem",
+      "test": [
+        "/Users/yogeshanandanikam/project/specmatic-order-api-grpc-kotlin/proto/src/main/proto/order.proto",
+        "/Users/yogeshanandanikam/project/specmatic-order-api-grpc-kotlin/proto/src/main/proto/product.proto"
+      ]
+    }
+  ]
+}
