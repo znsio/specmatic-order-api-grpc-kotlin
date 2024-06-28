@@ -1,5 +1,7 @@
 {
   "fullMethodName": "product_package.ProductService/GetProduct",
+  "requestMessageType": "ProductId",
+  "responseMessageType": "Product",
   "request": {
     "id": 20
   },

@@ -1,5 +1,7 @@
 {
   "fullMethodName": "order_package.OrderService/SearchOrders",
+  "requestMessageType": "OrderSearchRequest",
+  "responseMessageType": "OrderListResponse",
   "request": {
     "productId": 10,
     "status": "PENDING"

@@ -1,5 +1,7 @@
 {
   "fullMethodName": "product_package.ProductService/DeleteProduct",
+  "requestMessageType": "ProductId",
+  "responseMessageType": "ProductResponse",
   "request": {
     "id": 10
   },

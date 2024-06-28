@@ -1,5 +1,7 @@
 {
   "fullMethodName": "order_package.OrderService/AddOrder",
+  "requestMessageType": "NewOrder",
+  "responseMessageType": "OrderId",
   "request": {
     "productid": 10,
     "count": 8,

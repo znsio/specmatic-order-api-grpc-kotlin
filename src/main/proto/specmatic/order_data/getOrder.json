@@ -1,10 +1,10 @@
 {
   "fullMethodName": "order_package.OrderService/GetOrder",
   "requestMessageType": "OrderId",
+  "responseMessageType": "Order",
   "request": {
     "id": 10
   },
-  "responseMessageType": "Order",
   "response": {
     "id" : 10,
     "productid" : 10,
