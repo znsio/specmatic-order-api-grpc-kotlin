@@ -4,9 +4,9 @@ This sample project demonstrates [Specmatic](https://specmatic.in/) **gRPC suppo
 [Specmatic](https://specmatic.in/) **gRPC support** can also help you use your proto files as Mocks, for #nocode backward compatibility test and more.
 
 The **specmatic-order-api-grpc-kotlin** is a gRPC server application built as per below proto files.
-* `order.proto`,
+* `src/main/proto/order.proto`,
 * `src/main/proto/product.proto`
-TODO: These proto files can be found in our [central-contract-repo](https://github.com/znsio/specmatic-order-contracts/blob/main/in/specmatic/examples/store/api_order_v3.yaml)
+NOTE: In a real-world scenario, these proto files would be on a Central Contract Repo so that we have single source of truth for all stakeholders. We have the files locally here for demo purposes.
 
 The `ContractTest` class demonstrates how to use Specmatic to test **specmatic-order-api-grpc-kotlin** gRPC server app using the above proto files.
 
