@@ -5,8 +5,8 @@ This sample project demonstrates [Specmatic](https://specmatic.in/) **gRPC suppo
 
 
 The **specmatic-order-api-grpc-kotlin** is a gRPC server application built as per below proto files.
-* `src/main/proto/order.proto`
-* `src/main/proto/product.proto`
+* [`src/main/proto/order.proto`](src/main/proto/order.proto)
+* [`src/main/proto/product.proto`](src/main/proto/product.proto)
 
 
 NOTE: In a real-world scenario, these proto files would be on a Central Contract Repo so that we have single source of truth for all stakeholders. We have the files locally here for demo purposes.
