@@ -11,17 +11,17 @@ object ProductDB {
     )
     private var productIndex = PRODUCTS.maxOf { it.key }
 
-    private fun filterProduct(product: Product, productSearchRequest: ProductSearchRequest?): Boolean {
-        return (productSearchRequest?.type == ProductType.NULL_PROD_TYPE) || (product.type == productSearchRequest?.type)
+    private fun filterProduct(product: Product, productSearchRequest: ProductSearchRequest): Boolean {
+        return (productSearchRequest.type == ProductType.NULL_PROD_TYPE) || (product.type == productSearchRequest.type)
     }
 
-    fun getProducts(productSearchRequest: ProductSearchRequest?): List<Product> {
+    fun getProducts(productSearchRequest: ProductSearchRequest): List<Product> {
         return PRODUCTS.filter { filterProduct(it.value, productSearchRequest) }.map { it.value }
     }
 
     fun getProduct(productId: ProductId): Product {
         ensureIdExists(productId.id)
-        return PRODUCTS[productId.id]!!
+        return PRODUCTS.getValue(productId.id)
     }
 
     fun addProduct(product: NewProduct): ProductId {

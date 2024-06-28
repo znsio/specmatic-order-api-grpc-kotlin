@@ -10,19 +10,19 @@ object OrderDB {
     )
     private var orderIndex = ORDERS.maxOf { it.key }
 
-    private fun filterOrder(order: Order, orderSearchRequest: OrderSearchRequest?): Boolean {
-        return (orderSearchRequest?.productId == 0 || order.productId == orderSearchRequest?.productId)
+    private fun filterOrder(order: Order, orderSearchRequest: OrderSearchRequest): Boolean {
+        return (orderSearchRequest.productId == 0 || order.productId == orderSearchRequest.productId)
                 && (orderSearchRequest.status == OrderStatus.NULL_ORD_STATUS || order.status == orderSearchRequest.status)
     }
 
-    fun getOrders(orderSearchRequest: OrderSearchRequest?): List<Order> {
+    fun getOrders(orderSearchRequest: OrderSearchRequest): List<Order> {
         return ORDERS.filter { filterOrder(it.value, orderSearchRequest) }
             .map { it.value }
     }
 
     fun getOrder(orderId: OrderId): Order {
         ensureIdExists(orderId.id)
-        return ORDERS[orderId.id]!!
+        return ORDERS.getValue(orderId.id)
     }
 
     fun addOrder(newOrder: NewOrder): OrderId {
