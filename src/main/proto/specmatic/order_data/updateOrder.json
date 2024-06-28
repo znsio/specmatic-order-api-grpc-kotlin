@@ -1,8 +1,8 @@
 {
-  "fullMethodName": "order_package.OrderService/UpdateOrder",
+  "fullMethodName": "com.store.OrderService/UpdateOrder",
   "request": {
     "id": 10,
-    "productid": 10,
+    "productId": 10,
     "count": 10,
     "status": "FULFILLED"
   },

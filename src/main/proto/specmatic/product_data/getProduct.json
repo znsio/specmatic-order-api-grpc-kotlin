@@ -1,5 +1,5 @@
 {
-  "fullMethodName": "product_package.ProductService/GetProduct",
+  "fullMethodName": "com.store.ProductService/GetProduct",
   "request": {
     "id": 20
   },

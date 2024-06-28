@@ -5,13 +5,13 @@ import com.store.product.proto.ProductId
 
 object OrderDB {
     private val ORDERS: MutableMap<Int, Order> = mutableMapOf(
-        10 to Order.newBuilder().setId(10).setProductid(10).setCount(10).setStatus(OrderStatus.PENDING).build(),
-        20 to Order.newBuilder().setId(20).setProductid(20).setCount(20).setStatus(OrderStatus.FULFILLED).build(),
+        10 to Order.newBuilder().setId(10).setProductId(10).setCount(10).setStatus(OrderStatus.PENDING).build(),
+        20 to Order.newBuilder().setId(20).setProductId(20).setCount(20).setStatus(OrderStatus.FULFILLED).build(),
     )
     private var orderIndex = ORDERS.maxOf { it.key }
 
     private fun filterOrder(order: Order, orderSearchRequest: OrderSearchRequest?): Boolean {
-        return (orderSearchRequest?.productId == 0 || order.productid == orderSearchRequest?.productId)
+        return (orderSearchRequest?.productId == 0 || order.productId == orderSearchRequest?.productId)
                 && (orderSearchRequest.status == OrderStatus.NULL_ORD_STATUS || order.status == orderSearchRequest.status)
     }
 
@@ -30,13 +30,13 @@ object OrderDB {
 
     fun addOrder(newOrder: NewOrder): OrderId {
         val product = ProductDB.getProduct(
-            ProductId.newBuilder().setId(newOrder.productid).build()
+            ProductId.newBuilder().setId(newOrder.productId).build()
         )
         val id = ++orderIndex
         ORDERS[id] =
             Order.newBuilder()
                 .setId(id)
-                .setProductid(product.id)
+                .setProductId(product.id)
                 .setCount(newOrder.count)
                 .setStatus(OrderStatus.PENDING)
                 .build()

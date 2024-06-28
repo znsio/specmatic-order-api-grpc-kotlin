@@ -1,5 +1,5 @@
 {
-  "fullMethodName": "product_package.ProductService/SearchProducts",
+  "fullMethodName": "com.store.ProductService/SearchProducts",
   "request": {
     "type": "BOOK"
   },

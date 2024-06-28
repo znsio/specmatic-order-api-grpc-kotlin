@@ -1,5 +1,5 @@
 {
-  "fullMethodName": "product_package.ProductService/DeleteProduct",
+  "fullMethodName": "com.store.ProductService/DeleteProduct",
   "request": {
     "id": 10
   },

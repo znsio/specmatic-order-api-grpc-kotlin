@@ -1,7 +1,7 @@
 {
-  "fullMethodName": "order_package.OrderService/AddOrder",
+  "fullMethodName": "com.store.OrderService/AddOrder",
   "request": {
-    "productid": 10,
+    "productId": 10,
     "count": 8,
     "status": "PENDING"
   },

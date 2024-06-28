@@ -1,5 +1,5 @@
 {
-  "fullMethodName": "order_package.OrderService/SearchOrders",
+  "fullMethodName": "com.store.OrderService/SearchOrders",
   "request": {
     "productId": 10,
     "status": "PENDING"
@@ -8,7 +8,7 @@
     "orders": [
       {
         "id" : 10,
-        "productid" : 10,
+        "productId" : 10,
         "count" : 10,
         "status" : "PENDING"
       }

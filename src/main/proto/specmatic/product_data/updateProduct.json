@@ -1,5 +1,5 @@
 {
-  "fullMethodName": "product_package.ProductService/UpdateProduct",
+  "fullMethodName": "com.store.ProductService/UpdateProduct",
   "request": {
     "id": 20,
     "name": "Gemini",
