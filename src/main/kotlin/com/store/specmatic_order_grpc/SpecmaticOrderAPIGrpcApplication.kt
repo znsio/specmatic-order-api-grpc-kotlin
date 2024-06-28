@@ -4,8 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class SpecmaticOrderGrpcApplication
+class SpecmaticOrderAPIGrpcApplication
 
 fun main(args: Array<String>) {
-	runApplication<SpecmaticOrderGrpcApplication>(*args)
+	runApplication<SpecmaticOrderAPIGrpcApplication>(*args)
 }
