@@ -2,11 +2,12 @@ package com.store.specmatic_order_api_grpc.model
 
 import com.store.product.proto.*
 
-
 object ProductDB {
     private val PRODUCTS: MutableMap<Int, Product> = mutableMapOf(
         10 to Product.newBuilder().setId(10).setName("XYZ Phone").setType(ProductType.GADGET).setInventory(10).build(),
         20 to Product.newBuilder().setId(20).setName("Gemini").setType(ProductType.BOOK).setInventory(20).build(),
+        30 to Product.newBuilder().setId(30).setName("Chips").setType(ProductType.FOOD).setInventory(30).build(),
+        40 to Product.newBuilder().setId(40).setName("Socks").setType(ProductType.OTHER).setInventory(40).build(),
     )
     private var productIndex = PRODUCTS.maxOf { it.key }
 
@@ -19,34 +20,30 @@ object ProductDB {
     }
 
     fun getProduct(productId: ProductId): Product {
-        if (!PRODUCTS.containsKey(productId.id)) {
-            throw NoSuchElementException("Product with ID ${productId.id} was not found")
-        } else {
-            return PRODUCTS[productId.id]!!
-        }
+        ensureIdExists(productId.id)
+        return PRODUCTS[productId.id]!!
     }
 
     fun addProduct(product: NewProduct): ProductId {
         val id = ++productIndex
-        PRODUCTS[id] =
-            Product.newBuilder().setId(id).setName(product.name).setType(product.type).setInventory(product.inventory)
-                .build()
+        PRODUCTS[id] = Product.newBuilder().setId(id).setName(product.name).setType(product.type)
+            .setInventory(product.inventory).build()
         return ProductId.newBuilder().setId(id).build()
     }
 
     fun updateProduct(product: Product) {
-        if (!PRODUCTS.containsKey(product.id)) {
-            throw NoSuchElementException("Product with ID ${product.id} was not found")
-        } else {
-            PRODUCTS[product.id] = product
-        }
+        ensureIdExists(product.id)
+        PRODUCTS[product.id] = product
     }
 
     fun deleteProduct(productId: ProductId) {
-        if (!PRODUCTS.containsKey(productId.id)) {
-            throw NoSuchElementException("Product with ID ${productId.id} was not found")
-        } else {
-            PRODUCTS.remove(productId.id)
+        ensureIdExists(productId.id)
+        PRODUCTS.remove(productId.id)
+    }
+
+    private fun ensureIdExists(id: Int) {
+        if (!PRODUCTS.containsKey(id)) {
+            throw NoSuchElementException("Product with ID $id was not found")
         }
     }
 }

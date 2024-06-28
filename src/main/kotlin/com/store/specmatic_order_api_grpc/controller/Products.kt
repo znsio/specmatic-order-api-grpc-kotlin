@@ -7,11 +7,7 @@ import net.devh.boot.grpc.server.service.GrpcService
 
 @GrpcService
 class Products : ProductServiceGrpc.ProductServiceImplBase() {
-
-    override fun searchProducts(
-        request: ProductSearchRequest?,
-        responseObserver: StreamObserver<ProductListResponse>?
-    ) {
+    override fun searchProducts(request: ProductSearchRequest?, responseObserver: StreamObserver<ProductListResponse>?) {
         val products = ProductDB.getProducts(request)
         responseObserver?.onNext(ProductListResponse.newBuilder().addAllProducts(products).build())
         responseObserver?.onCompleted()
@@ -40,5 +36,4 @@ class Products : ProductServiceGrpc.ProductServiceImplBase() {
         responseObserver?.onNext(ProductResponse.newBuilder().setMessage("Success").build())
         responseObserver?.onCompleted()
     }
-
 }

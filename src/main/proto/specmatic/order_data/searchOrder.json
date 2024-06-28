@@ -1,15 +1,15 @@
 {
   "fullMethodName": "com.store.OrderService/SearchOrders",
   "request": {
-    "productId": 10,
+    "productId": 100,
     "status": "PENDING"
   },
   "response": {
     "orders": [
       {
         "id" : 10,
-        "productId" : 10,
-        "count" : 10,
+        "productId" : 100,
+        "count" : 99,
         "status" : "PENDING"
       }
     ]

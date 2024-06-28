@@ -5,8 +5,8 @@
   },
   "response": {
     "id" : 10,
-    "productId" : 10,
-    "count" : 10,
+    "productId" : 100,
+    "count" : 99,
     "status" : "PENDING"
   }
 }

@@ -5,8 +5,8 @@ import com.store.product.proto.ProductId
 
 object OrderDB {
     private val ORDERS: MutableMap<Int, Order> = mutableMapOf(
-        10 to Order.newBuilder().setId(10).setProductId(10).setCount(10).setStatus(OrderStatus.PENDING).build(),
-        20 to Order.newBuilder().setId(20).setProductId(20).setCount(20).setStatus(OrderStatus.FULFILLED).build(),
+        10 to Order.newBuilder().setId(10).setProductId(100).setCount(99).setStatus(OrderStatus.PENDING).build(),
+        20 to Order.newBuilder().setId(20).setProductId(200).setCount(33).setStatus(OrderStatus.FULFILLED).build(),
     )
     private var orderIndex = ORDERS.maxOf { it.key }
 
@@ -21,11 +21,8 @@ object OrderDB {
     }
 
     fun getOrder(orderId: OrderId): Order {
-        if (!ORDERS.containsKey(orderId.id)) {
-            throw NoSuchElementException("Order with ID ${orderId.id} was not found")
-        } else {
-            return ORDERS[orderId.id]!!
-        }
+        ensureIdExists(orderId.id)
+        return ORDERS[orderId.id]!!
     }
 
     fun addOrder(newOrder: NewOrder): OrderId {
@@ -44,18 +41,18 @@ object OrderDB {
     }
 
     fun updateOrder(order: Order) {
-        if (!ORDERS.containsKey(order.id)) {
-            throw NoSuchElementException("Order with ID ${order.id} was not found")
-        } else {
-            ORDERS[order.id] = order
-        }
+        ensureIdExists(order.id)
+        ORDERS[order.id] = order
     }
 
     fun deleteOrder(orderId: OrderId) {
-        if (!ORDERS.containsKey(orderId.id)) {
-            throw Exception("Order with ID ${orderId.id} was not found")
-        } else {
-            ORDERS.remove(orderId.id)
+        ensureIdExists(orderId.id)
+        ORDERS.remove(orderId.id)
+    }
+
+    private fun ensureIdExists(id: Int) {
+        if (!ORDERS.containsKey(id)) {
+            throw NoSuchElementException("Order with ID $id was not found")
         }
     }
 }
