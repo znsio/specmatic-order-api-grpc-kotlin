@@ -1,34 +1,34 @@
-# Specmatic Order gRPC Sample
+# Specmatic Order API gRPC Sample
 
 **specmatic-order-grpc** is a gRPC server application built according to the Specmatic Order API specifications.<br />
-The gRPC specifications are based on
-the [order-api](https://github.com/znsio/specmatic-order-contracts/blob/main/in/specmatic/examples/store/api_order_v1.yaml)
-OpenAPI specification.<br />
+The Open API Specifications can be found
+at [order-api](https://github.com/znsio/specmatic-order-contracts/blob/main/in/specmatic/examples/store/api_order_v3.yaml)<br />
 
 ## Requirements
+
 - Java 17 or later
 
 ## Project Setup
 
 1. Fork or clone the repository
-2. Generate Proto files and Install to Local Repository
-    - ```bash
-      mvn clean install -f proto/pom.xml
-      ```
-3. Build the Spring Server
-    - ```bash
-      mvn clean package
-      ```
-4. Run the server
-    - ```bash
-      java -jar target/specmatic-order-grpc-0.0.1-SNAPSHOT.jar
-      ```
-      or
-    - ```bash
-      mvn spring-boot:run
-      ```
+   ```bash
+   git clone https://github.com/znsio/specmatic-order-api-grpc-kotlin
+   ```
+2. To assemble the project and compile the protobuf files, execute the following command
+   ```bash
+   gradle assemble
+   ```
+3. To run the gRPC server using Gradle, execute
+   ```bash
+   gradle bootRun
+   ```
+4. To run contract tests, execute
+   ```bash
+   gradle test --tests "com.store.specmatic_order_grpc.ContractTest" --info   
+   ```
 
 ## Intellij Notes
 
-If you are utilizing **IntelliJ IDEA**, you have the option to compile or install the proto module via the Maven sidebar.<br/>
-Subsequently, you can initiate the Spring server through the Run/Debug menu.
+IntelliJ IDEA has built-in support for Gradle projects. Import the project into IntelliJ IDEA using File > New > Project
+from Existing Sources and select build.gradle. IDEA will recognize the Gradle project structure and allow you to run
+tasks directly from the IDE.
