@@ -1,7 +1,7 @@
-package com.store.specmatic_order_grpc.controller
+package com.store.specmatic_order_api_grpc.controller
 
 import com.store.product.proto.*
-import com.store.specmatic_order_grpc.model.ProductDB
+import com.store.specmatic_order_api_grpc.model.ProductDB
 import io.grpc.stub.StreamObserver
 import net.devh.boot.grpc.server.service.GrpcService
 
@@ -12,7 +12,7 @@ class Products : ProductServiceGrpc.ProductServiceImplBase() {
         request: ProductSearchRequest?,
         responseObserver: StreamObserver<ProductListResponse>?
     ) {
-        val products = ProductDB.getProducts(request);
+        val products = ProductDB.getProducts(request)
         responseObserver?.onNext(ProductListResponse.newBuilder().addAllProducts(products).build())
         responseObserver?.onCompleted()
     }

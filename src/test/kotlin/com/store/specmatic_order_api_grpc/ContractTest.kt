@@ -1,4 +1,4 @@
-package com.store.specmatic_order_grpc
+package com.store.specmatic_order_api_grpc
 
 import `in`.specmatic.grpc.junit.SpecmaticGrpcContractTest
 import `in`.specmatic.grpc.utils.HOST

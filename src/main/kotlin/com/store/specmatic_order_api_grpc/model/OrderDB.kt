@@ -1,4 +1,4 @@
-package com.store.specmatic_order_grpc.model
+package com.store.specmatic_order_api_grpc.model
 
 import com.store.order.proto.*
 import com.store.product.proto.ProductId

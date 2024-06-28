@@ -1,4 +1,4 @@
-package com.store.specmatic_order_grpc.handler
+package com.store.specmatic_order_api_grpc.handler
 
 import io.grpc.Status
 import net.devh.boot.grpc.server.advice.GrpcAdvice

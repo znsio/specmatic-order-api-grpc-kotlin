@@ -1,4 +1,4 @@
-package com.store.specmatic_order_grpc
+package com.store.specmatic_order_api_grpc
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
