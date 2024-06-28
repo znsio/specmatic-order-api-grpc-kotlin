@@ -8,7 +8,7 @@ import `in`.specmatic.grpc.utils.STUB_PORT
 import org.junit.jupiter.api.BeforeAll
 import org.springframework.boot.test.context.SpringBootTest
 
-//@SpringBootTest
+@SpringBootTest
 class ContractTest : SpecmaticGrpcContractTest {
     companion object {
 //        private var grpcStub: GrpcStub? = null
