@@ -5,6 +5,10 @@
       "test": [
         "src/main/proto/order.proto",
         "src/main/proto/product.proto"
+      ],
+      "stub": [
+        "src/main/proto/order.proto",
+        "src/main/proto/product.proto"
       ]
     }
   ]
