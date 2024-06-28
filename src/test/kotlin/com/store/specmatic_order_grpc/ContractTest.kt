@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest
 //@SpringBootTest
 class ContractTest : SpecmaticGrpcContractTest {
     companion object {
-        private var grpcStub: GrpcStub? = null
+//        private var grpcStub: GrpcStub? = null
 
         @JvmStatic
         @BeforeAll
@@ -19,14 +19,14 @@ class ContractTest : SpecmaticGrpcContractTest {
             System.setProperty(HOST, "localhost")
             System.setProperty(PORT, "9090")
             System.setProperty(STUB_PORT, "9090")
-            grpcStub = GrpcStub.createGrpcStub(9090)
-            grpcStub?.start()
+//            grpcStub = GrpcStub.createGrpcStub(9090)
+//            grpcStub?.start()
         }
 
         @JvmStatic
         @BeforeAll
         fun tearDown() {
-            grpcStub?.stop()
+//            grpcStub?.stop()
         }
     }
 }
