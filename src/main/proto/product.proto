@@ -40,7 +40,7 @@ message ProductId {
 }
 
 message ProductSearchRequest {
-  optional ProductType type = 1;
+  ProductType type = 1;
 }
 
 message ProductListResponse {

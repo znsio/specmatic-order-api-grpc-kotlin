@@ -4,6 +4,13 @@
     "type": "BOOK"
   },
   "response": {
-    "products": []
+    "products": [
+      {
+        "id": 20,
+        "name": "Gemini",
+        "type": "BOOK",
+        "inventory": 20
+      }
+    ]
   }
 }

@@ -4,9 +4,9 @@
     "id": 20
   },
   "response": {
-    "id" : 1,
-    "name" : "iPhone",
-    "type" : "GADGET",
-    "inventory" : 4
+    "id" : 20,
+    "name" : "Gemini",
+    "type" : "BOOK",
+    "inventory" : 20
   }
 }

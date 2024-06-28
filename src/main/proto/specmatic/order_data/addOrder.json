@@ -2,9 +2,10 @@
   "fullMethodName": "order_package.OrderService/AddOrder",
   "request": {
     "productid": 10,
-    "count": 8
+    "count": 8,
+    "status": "PENDING"
   },
   "response": {
-    "id" : 1
+    "id" : 21
   }
 }

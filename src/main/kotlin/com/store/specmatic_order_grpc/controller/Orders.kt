@@ -1,39 +1,39 @@
 package com.store.specmatic_order_grpc.controller
 
 import com.store.order.proto.*
-import com.store.specmatic_order_grpc.service.OrderService
+import com.store.specmatic_order_grpc.model.OrderDB
+
 import io.grpc.stub.StreamObserver
 import net.devh.boot.grpc.server.service.GrpcService
 
 @GrpcService
-class Orders(private val orderService: OrderService) : OrderServiceGrpc.OrderServiceImplBase() {
-
+class Orders : OrderServiceGrpc.OrderServiceImplBase() {
     override fun searchOrders(request: OrderSearchRequest?, responseObserver: StreamObserver<OrderListResponse>?) {
-        val orders = orderService.searchOrders(request)
+        val orders = OrderDB.getOrders(request);
         responseObserver?.onNext(OrderListResponse.newBuilder().addAllOrders(orders).build())
         responseObserver?.onCompleted()
     }
 
     override fun getOrder(request: OrderId?, responseObserver: StreamObserver<Order>?) {
-        val order = orderService.getOrder(request)
+        val order = OrderDB.getOrder(request!!)
         responseObserver?.onNext(order)
         responseObserver?.onCompleted()
     }
 
     override fun addOrder(request: NewOrder?, responseObserver: StreamObserver<OrderId>?) {
-        val orderId = orderService.addOrder(request)
+        val orderId = OrderDB.addOrder(request!!)
         responseObserver?.onNext(orderId)
         responseObserver?.onCompleted()
     }
 
     override fun updateOrder(request: Order?, responseObserver: StreamObserver<OrderResponse>?) {
-        orderService.updateOrder(request)
+        OrderDB.updateOrder(request!!)
         responseObserver?.onNext(OrderResponse.newBuilder().setMessage("Success").build())
         responseObserver?.onCompleted()
     }
 
     override fun deleteOrder(request: OrderId?, responseObserver: StreamObserver<OrderResponse>?) {
-        orderService.deleteOrder(request)
+        OrderDB.deleteOrder(request!!)
         responseObserver?.onNext(OrderResponse.newBuilder().setMessage("Success").build())
         responseObserver?.onCompleted()
     }

@@ -31,6 +31,7 @@ message Order {
 message NewOrder {
   int32 productid = 1;
   int32 count = 2;
+  OrderStatus status = 3;
 }
 
 message OrderId {
@@ -38,8 +39,8 @@ message OrderId {
 }
 
 message OrderSearchRequest {
-  optional int32 productId = 1;
-  optional OrderStatus status = 2;
+  int32 productId = 1;
+  OrderStatus status = 2;
 }
 
 message OrderListResponse {

@@ -1,9 +1,9 @@
 {
   "fullMethodName": "product_package.ProductService/DeleteProduct",
   "request": {
-    "id": 20
+    "id": 10
   },
   "response": {
-    "message": ""
+    "message": "Success"
   }
 }

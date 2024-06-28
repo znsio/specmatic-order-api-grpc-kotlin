@@ -1,12 +1,12 @@
 {
   "fullMethodName": "order_package.OrderService/UpdateOrder",
   "request": {
-    "id": 20,
-    "productid": 20,
-    "count": 4,
+    "id": 10,
+    "productid": 10,
+    "count": 10,
     "status": "FULFILLED"
   },
   "response": {
-    "message" : ""
+    "message" : "Success"
   }
 }

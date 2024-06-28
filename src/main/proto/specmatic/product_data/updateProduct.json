@@ -4,9 +4,9 @@
     "id": 20,
     "name": "Gemini",
     "type": "BOOK",
-    "inventory": 2
+    "inventory": 10
   },
   "response": {
-    "message": ""
+    "message": "Success"
   }
 }

@@ -3,8 +3,8 @@
     {
       "provider": "filesystem",
       "test": [
-        "proto/src/main/proto/order.proto",
-        "proto/src/main/proto/product.proto"
+        "src/main/proto/order.proto",
+        "src/main/proto/product.proto"
       ]
     }
   ]
