@@ -1,7 +1,5 @@
 {
   "fullMethodName": "product_package.ProductService/SearchProducts",
-  "requestMessageType": "ProductSearchRequest",
-  "responseMessageType": "ProductListResponse",
   "request": {
     "type": "BOOK"
   },

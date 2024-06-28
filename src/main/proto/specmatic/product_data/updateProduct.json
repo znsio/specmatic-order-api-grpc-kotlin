@@ -1,7 +1,5 @@
 {
   "fullMethodName": "product_package.ProductService/UpdateProduct",
-  "requestMessageType": "Product",
-  "responseMessageType": "ProductResponse",
   "request": {
     "id": 20,
     "name": "Gemini",

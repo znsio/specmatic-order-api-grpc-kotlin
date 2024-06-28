@@ -1,7 +1,5 @@
 {
   "fullMethodName": "order_package.OrderService/DeleteOrder",
-  "requestMessageType": "OrderId",
-  "responseMessageType": "OrderResponse",
   "request": {
     "id": 20
   },

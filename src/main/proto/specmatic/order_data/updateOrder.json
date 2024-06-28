@@ -1,7 +1,5 @@
 {
   "fullMethodName": "order_package.OrderService/UpdateOrder",
-  "requestMessageType": "Order",
-  "responseMessageType": "OrderResponse",
   "request": {
     "id": 10,
     "productid": 10,
