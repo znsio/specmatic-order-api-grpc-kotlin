@@ -1,9 +1,0 @@
-{
-  "fullMethodName": "com.store.ProductService/DeleteProduct",
-  "request": {
-    "id": 10
-  },
-  "response": {
-    "message": "Success"
-  }
-}

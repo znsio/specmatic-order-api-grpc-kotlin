@@ -1,8 +1,0 @@
-{
-  "fullMethodName": "com.store.OrderService/GetOrder",
-  "request": {},
-  "response": {
-    "errorCode": 3,
-    "errorMessage": "Validation error:\n - id: value is required [required]"
-  }
-}
