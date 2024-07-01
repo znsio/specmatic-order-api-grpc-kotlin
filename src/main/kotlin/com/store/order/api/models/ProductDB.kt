@@ -1,4 +1,4 @@
-package com.store.specmatic_order_api_grpc.model
+package com.store.order.api.models
 
 import com.store.product.proto.*
 
@@ -15,7 +15,7 @@ object ProductDB {
         return (productSearchRequest.type == ProductType.NULL_PROD_TYPE) || (product.type == productSearchRequest.type)
     }
 
-    fun getProducts(productSearchRequest: ProductSearchRequest): List<Product> {
+    fun searchProducts(productSearchRequest: ProductSearchRequest): List<Product> {
         return PRODUCTS.filter { filterProduct(it.value, productSearchRequest) }.map { it.value }
     }
 

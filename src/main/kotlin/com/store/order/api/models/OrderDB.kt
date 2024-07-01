@@ -1,12 +1,14 @@
-package com.store.specmatic_order_api_grpc.model
+package com.store.order.api.models
 
 import com.store.order.proto.*
 import com.store.product.proto.ProductId
 
 object OrderDB {
     private val ORDERS: MutableMap<Int, Order> = mutableMapOf(
-        10 to Order.newBuilder().setId(10).setProductId(100).setCount(99).setStatus(OrderStatus.PENDING).build(),
-        20 to Order.newBuilder().setId(20).setProductId(200).setCount(33).setStatus(OrderStatus.FULFILLED).build(),
+        10 to Order.newBuilder().setId(10).setProductId(10).setCount(99).setStatus(OrderStatus.PENDING).build(),
+        20 to Order.newBuilder().setId(20).setProductId(20).setCount(33).setStatus(OrderStatus.FULFILLED).build(),
+        35 to Order.newBuilder().setId(35).setProductId(30).setCount(11).setStatus(OrderStatus.CANCELLED).build(),
+        40 to Order.newBuilder().setId(40).setProductId(40).setCount(22).setStatus(OrderStatus.PENDING).build(),
     )
     private var orderIndex = ORDERS.maxOf { it.key }
 
@@ -15,7 +17,7 @@ object OrderDB {
                 && (orderSearchRequest.status == OrderStatus.NULL_ORD_STATUS || order.status == orderSearchRequest.status)
     }
 
-    fun getOrders(orderSearchRequest: OrderSearchRequest): List<Order> {
+    fun searchOrders(orderSearchRequest: OrderSearchRequest): List<Order> {
         return ORDERS.filter { filterOrder(it.value, orderSearchRequest) }
             .map { it.value }
     }

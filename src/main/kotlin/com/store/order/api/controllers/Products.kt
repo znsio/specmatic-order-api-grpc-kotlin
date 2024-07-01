@@ -1,14 +1,14 @@
-package com.store.specmatic_order_api_grpc.controller
+package com.store.order.api.controllers
 
 import com.store.product.proto.*
-import com.store.specmatic_order_api_grpc.model.ProductDB
+import com.store.order.api.models.ProductDB
 import io.grpc.stub.StreamObserver
 import net.devh.boot.grpc.server.service.GrpcService
 
 @GrpcService
 class Products : ProductServiceGrpc.ProductServiceImplBase() {
     override fun searchProducts(request: ProductSearchRequest, responseObserver: StreamObserver<ProductListResponse>) {
-        val products = ProductDB.getProducts(request)
+        val products = ProductDB.searchProducts(request)
         responseObserver.onNext(ProductListResponse.newBuilder().addAllProducts(products).build())
         responseObserver.onCompleted()
     }

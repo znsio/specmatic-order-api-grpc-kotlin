@@ -1,0 +1,8 @@
+{
+  "fullMethodName": "com.store.ProductService/UpdateProduct",
+  "request": {},
+  "response": {
+    "errorCode": 3,
+    "errorMessage": "Validation error:\n - id: value is required [required]\n - name: value is required [required]\n - type: value is required [required]\n - inventory: value is required [required]"
+  }
+}

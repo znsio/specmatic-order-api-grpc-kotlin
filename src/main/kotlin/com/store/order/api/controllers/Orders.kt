@@ -1,7 +1,7 @@
-package com.store.specmatic_order_api_grpc.controller
+package com.store.order.api.controllers
 
 import com.store.order.proto.*
-import com.store.specmatic_order_api_grpc.model.OrderDB
+import com.store.order.api.models.OrderDB
 
 import io.grpc.stub.StreamObserver
 import net.devh.boot.grpc.server.service.GrpcService
@@ -9,7 +9,7 @@ import net.devh.boot.grpc.server.service.GrpcService
 @GrpcService
 class Orders : OrderServiceGrpc.OrderServiceImplBase() {
     override fun searchOrders(request: OrderSearchRequest, responseObserver: StreamObserver<OrderListResponse>) {
-        val orders = OrderDB.getOrders(request)
+        val orders = OrderDB.searchOrders(request)
         responseObserver.onNext(OrderListResponse.newBuilder().addAllOrders(orders).build())
         responseObserver.onCompleted()
     }

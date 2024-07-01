@@ -1,0 +1,11 @@
+{
+  "fullMethodName": "com.store.ProductService/AddProduct",
+  "request": {
+    "name": "Some Book",
+    "type": "BOOK",
+    "inventory": 100
+  },
+  "response": {
+    "id" : 21
+  }
+}
