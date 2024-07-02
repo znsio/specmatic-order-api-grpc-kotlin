@@ -39,7 +39,9 @@ dependencies {
     implementation "io.grpc:grpc-stub:${grpcVersion}"
 
     implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
     implementation "net.devh:grpc-server-spring-boot-starter:${springBootGrpcVersion}"
+    implementation "build.buf:protovalidate:0.2.1"
 
     compileOnly 'jakarta.annotation:jakarta.annotation-api:1.3.5' // Java 9+ compatibility - Do NOT update to 2.0.0
 
@@ -73,19 +75,15 @@ kotlin {
     }
 }
 
-tasks.named('test') {
-    useJUnitPlatform()
-}
-
 eclipse {
     classpath {
         file.beforeMerged { cp ->
-            def generatedGrpcFolder = new SourceFolder('src/generated/main/grpc', null);
-            generatedGrpcFolder.entryAttributes['ignore_optional_problems'] = 'true';
-            cp.entries.add(generatedGrpcFolder);
-            def generatedJavaFolder = new SourceFolder('src/generated/main/java', null);
-            generatedJavaFolder.entryAttributes['ignore_optional_problems'] = 'true';
-            cp.entries.add(generatedJavaFolder);
+            def generatedGrpcFolder = new SourceFolder('src/generated/main/grpc', null)
+            generatedGrpcFolder.entryAttributes['ignore_optional_problems'] = 'true'
+            cp.entries.add(generatedGrpcFolder)
+            def generatedJavaFolder = new SourceFolder('src/generated/main/java', null)
+            generatedJavaFolder.entryAttributes['ignore_optional_problems'] = 'true'
+            cp.entries.add(generatedJavaFolder)
         }
     }
 }
@@ -96,5 +94,23 @@ idea {
         sourceDirs += file("src/generated/main/grpc")
         generatedSourceDirs += file("src/generated/main/java")
         generatedSourceDirs += file("src/generated/main/grpc")
+    }
+}
+
+test {
+    useJUnitPlatform()
+
+    testLogging {
+        events "passed", "skipped", "failed"
+        showStandardStreams = true
+        exceptionFormat = 'full'
+    }
+
+    afterSuite { desc, result ->
+        if (!desc.parent) {
+            println "-----------------------------------------------------"
+            println "Results: ${result.resultType} (${result.testCount} tests, ${result.successfulTestCount} successes, ${result.failedTestCount} failures, ${result.skippedTestCount} skipped)"
+            println "-----------------------------------------------------"
+        }
     }
 }
