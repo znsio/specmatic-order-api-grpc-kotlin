@@ -1,0 +1,12 @@
+{
+  "fullMethodName": "com.store.ProductService/GetProduct",
+  "request": {
+    "id": 20
+  },
+  "response": {
+    "id" : 20,
+    "name" : "Gemini",
+    "type" : "BOOK",
+    "inventory" : 20
+  }
+}

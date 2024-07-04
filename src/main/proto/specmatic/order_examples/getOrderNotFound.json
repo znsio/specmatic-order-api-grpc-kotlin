@@ -1,0 +1,10 @@
+{
+  "fullMethodName": "com.store.OrderService/GetOrder",
+  "request": {
+    "id": 10000
+  },
+  "response": {
+    "errorCode": 5,
+    "errorMessage": "Order with ID 10000 was not found"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "fullMethodName": "com.store.OrderService/UpdateOrder",
+  "request": {
+    "invalid": "invalid_request"
+  },
+  "response": {
+    "message": "Success"
+  }
+}

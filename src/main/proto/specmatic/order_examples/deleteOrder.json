@@ -1,0 +1,9 @@
+{
+  "fullMethodName": "com.store.OrderService/DeleteOrder",
+  "request": {
+    "id": 20
+  },
+  "response": {
+    "message" : "Success"
+  }
+}

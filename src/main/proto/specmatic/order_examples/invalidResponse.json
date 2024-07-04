@@ -1,0 +1,10 @@
+{
+  "fullMethodName": "com.store.OrderService/SearchOrders",
+  "request": {
+    "productId": 100,
+    "status": "PENDING"
+  },
+  "response": {
+    "orders": "invalid_response"
+  }
+}

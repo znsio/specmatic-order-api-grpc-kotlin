@@ -1,0 +1,12 @@
+{
+  "fullMethodName": "com.store.OrderService/GetOrder",
+  "request": {
+    "id": 10
+  },
+  "response": {
+    "id" : 10,
+    "productId" : 100,
+    "count" : 99,
+    "status" : "PENDING"
+  }
+}
