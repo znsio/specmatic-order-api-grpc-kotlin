@@ -1,15 +1,13 @@
 # Specmatic Order API gRPC Sample
 
-This sample project demonstrates [Specmatic](https://specmatic.in/) **gRPC support** which allows you to use your **proto files for Contract Testing**.
-[Specmatic](https://specmatic.in/) **gRPC support** can also help you use your proto files for service mocking, #nocode backward compatibility testing and more.
+This sample project demonstrates [Specmatic](https://specmatic.io/) **gRPC support** which allows you to use your **proto files for Contract Testing**.
+[Specmatic](https://specmatic.io/) **gRPC support** can also help you use your proto files for service mocking, #nocode backward compatibility testing and more.
 
 
-The **specmatic-order-api-grpc-kotlin** is a gRPC server application built as per below proto files.
-* [`src/main/proto/order.proto`](src/main/proto/order.proto)
-* [`src/main/proto/product.proto`](src/main/proto/product.proto)
+The **specmatic-order-api-grpc-kotlin** is a gRPC server application developed according to the following proto files, which can be found in the central contract repository:
+* [order.proto](https://github.com/znsio/specmatic-order-contracts/blob/grpc-contracts/in/specmatic/examples/store/order_api_grpc/order.proto)
+* [product.proto](https://github.com/znsio/specmatic-order-contracts/blob/grpc-contracts/in/specmatic/examples/store/order_api_grpc/product.proto)
 
-
-NOTE: In a real-world scenario, these proto files would be on a Central Contract Repo so that we have single source of truth for all stakeholders. We have the files locally here for demo purposes.
 
 The `ContractTest` class demonstrates how to use Specmatic to test **specmatic-order-api-grpc-kotlin** gRPC server app using the above proto files.
 
@@ -23,13 +21,18 @@ The `ContractTest` class demonstrates how to use Specmatic to test **specmatic-o
    ```shell
    git clone https://github.com/znsio/specmatic-order-api-grpc-kotlin
    ```
-
-2. To run contract tests, execute
+   
+2. Initialize and update the contract-repo submodule
+   ```shell
+   git submodule update --init --recursive --remote
+   ```
+   
+3. To run contract tests, execute
    ```shell
    ./gradlew clean test   
    ```
-
-3. In case you want to run just the gRPC server using Gradle you can execute
+   
+4. In case you want to run just the gRPC server using Gradle you can execute
    ```shell
    ./gradlew bootRun
    ```
