@@ -42,3 +42,5 @@ out/
 .kotlin
 
 .DS_Store
+.specmatic
+.java-version
