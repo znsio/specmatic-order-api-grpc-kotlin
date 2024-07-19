@@ -1,10 +1,10 @@
 package com.store.specmatic_order_api_grpc
 
-import `in`.specmatic.grpc.junit.SpecmaticGrpcContractTest
-import `in`.specmatic.grpc.utils.EXAMPLES_DIR
-import `in`.specmatic.grpc.utils.HOST
-import `in`.specmatic.grpc.utils.PORT
-import `in`.specmatic.grpc.utils.SPECMATIC_GENERATIVE_TESTS
+import io.specmatic.grpc.junit.SpecmaticGrpcContractTest
+import io.specmatic.grpc.utils.EXAMPLES_DIR
+import io.specmatic.grpc.utils.HOST
+import io.specmatic.grpc.utils.PORT
+import io.specmatic.grpc.utils.SPECMATIC_GENERATIVE_TESTS
 import org.junit.jupiter.api.BeforeAll
 import org.springframework.boot.test.context.SpringBootTest
 
