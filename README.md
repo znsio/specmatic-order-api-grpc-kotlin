@@ -34,11 +34,14 @@ The `ContractTest` class demonstrates how to use Specmatic to test **specmatic-o
    git config submodule.recurse true
    ```
 
-4. To run contract tests, execute
-
-   ```shell
-   ./gradlew clean test   
-   ```
+4. To run contract tests, 
+   1. Using gradle - `./gradlew clean test`
+   2. Using docker -
+      - Run the application using `./gradlew bootRun`
+      - Run the tests
+      ```shell
+         docker run --network host -v "$(pwd)/specmatic.yaml:/usr/src/app/specmatic.yaml" -v "$(pwd)/build/reports/specmatic:/usr/src/app/build/reports/specmatic"  -e SPECMATIC_GENERATIVE_TESTS=true znsio/specmatic-grpc-trial test --port=8080 --host=host.docker.internal
+      ```
 
 5. In case you want to run just the gRPC server using Gradle you can execute
 
